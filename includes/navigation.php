@@ -23,8 +23,6 @@
                   $cat_title = $row['cat_title'];
 
                   echo "<li><a href='#'>{$cat_title}</a></li>";
-
-
                 }
 
 
