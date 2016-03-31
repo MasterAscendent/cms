@@ -2,7 +2,7 @@
 
     <div id="wrapper">
 
-      <?php if($connection) echo "conn";  ?>
+
 
 
 
@@ -28,6 +28,21 @@
                             WELCOME TO ADMIN
                             <small>Author</small>
                         </h1>
+
+                        <div class="col-xs-6">
+
+                        <form>
+                          <div class="form-group">
+                            <label  for="cat-title">Add Category</label>
+                            <input class="form-control" type="text" name="cat_title">
+                          </div>
+                          <div class="form-group">
+                            <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
+                          </div>
+
+
+                        </form>
+                      </div>
 
                     </div>
                 </div>
