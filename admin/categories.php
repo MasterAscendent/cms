@@ -1,4 +1,4 @@
-<?php include "includes/header.php"; ?>
+<?php include "includes/admin_header.php"; ?>
 
     <div id="wrapper">
 
@@ -13,7 +13,7 @@
 
 
         <!-- Navigation -->
-        <?php include "includes/navigation.php"; ?>
+        <?php include "includes/admin_navigation.php"; ?>
 
         <div id="page-wrapper">
 
@@ -45,6 +45,19 @@
                       </div><!-- Add Category Form -->
 
                       <div class="col-xs-6">
+
+                        <?php
+
+                        $query = "SELECT * FROM categories";
+                        $select_categories = mysqli_query($connection, $query);
+
+                        ?>
+
+
+
+
+
+
                         <table class="table table-bordered table-hover">
                           <thread>
                             <tr>
@@ -54,8 +67,20 @@
                           </thread>
                           <tbody>
                             <tr>
-                              <td>Baseball Category</td>
-                              <td>Basketball Category</td>
+
+                              <?php
+
+                              while($row = mysqli_fetch_assoc($select_categories)) {
+                                $cat_id = $row['cat_id'];
+                                $cat_title = $row['cat_title'];
+
+                                echo "<tr>";
+                                echo "<td>{$cat_id}</td>";
+                                echo "<td>{$cat_title}</td>";
+                                echo "</tr>";
+                              }
+
+                               ?>
                             </tr>
                           </tbody>
                         </table>
@@ -73,4 +98,4 @@
         </div>
         <!-- /#page-wrapper -->
 
-<?php include "includes/footer.php" ?>
+<?php include "includes/admin_footer.php" ?>
