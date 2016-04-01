@@ -95,7 +95,8 @@
 
 
 
-                               <?php
+                               <?php // DELETE QUERY
+
                                   if(isset($_GET['delete'])) {
 
                                     $the_cat_id = $_GET['delete'];
