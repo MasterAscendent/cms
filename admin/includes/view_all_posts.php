@@ -50,18 +50,6 @@
 
      ?>
 
-
-
-      <td>10</td>
-      <td>Steven Hensley II</td>
-      <td>Bootstrap framework</td>
-      <td>Bootstrap</td>
-      <td>Status</td>
-      <td>Image</td>
-      <td>Tages</td>
-      <td>Comments</td>
-      <td>Date</td>
-    </tr>
   </tbody>
 
 </table>
