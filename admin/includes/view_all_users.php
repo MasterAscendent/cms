@@ -1,13 +1,15 @@
 <table class="table table-border table-hover">
 
   <thead>
-    <th>Id</th>
-    <th>Username</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Email</th>
-    <th>Role</th>
-    <th>Date</th>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Date</th>
+    </tr>
   </thead>
 
   <tbody>

@@ -1,16 +1,18 @@
 <table class="table table-border table-hover">
 
   <thead>
-    <th>Id</th>
-    <th>Author</th>
-    <th>Comments</th>
-    <th>Email</th>
-    <th>Status</th>
-    <th>In Response to</th>
-    <th>Date</th>
-    <th>Approve</th>
-    <th>Unapprove</th>
-    <th>Delete</th>
+    <tr>
+      <th>Id</th>
+      <th>Author</th>
+      <th>Comments</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>In Response to</th>
+      <th>Date</th>
+      <th>Approve</th>
+      <th>Unapprove</th>
+      <th>Delete</th>
+    </tr>
   </thead>
 
   <tbody>
