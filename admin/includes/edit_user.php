@@ -38,13 +38,23 @@ if (isset($_POST['edit_user'])) {
 
   // move_uploaded_file($post_image_temp, "../images/$post_image");
 
-  $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
+  $query = "UPDATE users SET ";
+  $query .="user_firstname  = '{$user_firstname}', ";
+  $query .="user_lastname = '{$user_lastname}', ";
+  $query .="user_role  = '{$user_role}', ";
+  $query .="username = '{$username}', ";
+  $query .="user_email = '{$user_email}', ";
+  $query .="user_password   = '{$user_password}' ";
+  $query .= "WHERE user_id = {$the_user_id} ";
 
-  $query .= "VALUES('{$user_firstname}','{$user_lastname}', '{$user_role}','{$username}','{$user_email}','{$user_password}' ) ";
+  $edit_user_query = mysqli_query($connection, $query);
 
-  $create_user_query = mysqli_query($connection, $query);
+  confirmQuery($edit_user_query);
 
-  confirmQuery($create_user_query);
+
+
+
+
 
 }
 
@@ -83,10 +93,6 @@ if (isset($_POST['edit_user'])) {
 
        ?>
 
-      <option value="subscriber">Select Options</option>
-      <option value="admin">Admin</option>
-      <option value="subscriber">Subscriber</option>
-
     </select>
   </div>
 
@@ -113,7 +119,7 @@ if (isset($_POST['edit_user'])) {
   </div>
 
   <div class="form-group">
-    <input class="btn btn-primary" type="submit" name="edit_user" value="Add User">
+    <input class="btn btn-primary" type="submit" name="edit_user" value="Edit User">
   </div>
 
 </form>
