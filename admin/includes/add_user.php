@@ -58,7 +58,7 @@ if (isset($_POST['create_user'])) {
   </div> -->
 
   <div class="form-group">
-    <label for="post_tags">username</label>
+    <label for="post_tags">Username</label>
     <input type="text" class="form-control" name="username">
   </div>
 
