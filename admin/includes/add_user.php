@@ -2,9 +2,6 @@
 
 if (isset($_POST['create_user'])) {
 
-
-
-
   $user_firstname = $_POST['user_firstname'];
   $user_lastname = $_POST['user_lastname'];
   $user_role = $_POST['user_role'];
@@ -19,7 +16,7 @@ if (isset($_POST['create_user'])) {
 
   // move_uploaded_file($post_image_temp, "../images/$post_image");
 
-  $query = "INSERT INTO users(user_id, user_firstname, user_lastname, user_role, username, user_email, user_password) ";
+  $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
 
   $query .= "VALUES('{$user_firstname}','{$user_lastname}', '{$user_role}','{$username}','{$user_email}','{$user_password}' ) ";
 
@@ -47,7 +44,7 @@ if (isset($_POST['create_user'])) {
 
   <div class="form-group">
     <select name="user_role" id="">
-      <option value="subscriber">Select Option</option>
+      <option value="subscriber">Select Options</option>
       <option value="admin">Admin</option>
       <option value="subscriber">Subscriber</option>
 
@@ -77,7 +74,7 @@ if (isset($_POST['create_user'])) {
   </div>
 
   <div class="form-group">
-    <input class="btn btn-primary" type="submit" name="create_post" value="Add User">
+    <input class="btn btn-primary" type="submit" name="create_user" value="Add User">
   </div>
 
 </form>
