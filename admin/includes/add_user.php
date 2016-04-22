@@ -2,8 +2,10 @@
 
 if (isset($_POST['create_user'])) {
 
-  $user_id = $_POST['user_id'];
-  $user_firstname = $_POST['user_firstname'];
+
+
+
+echo $user_firstname = $_POST['user_firstname'];
   $user_lastname = $_POST['user_lastname'];
   $user_role = $_POST['user_role'];
 
@@ -15,15 +17,15 @@ if (isset($_POST['create_user'])) {
   $user_password = $_POST['user_password'];
   // $post_date = date('d-m-y');
 
-  move_uploaded_file($post_image_temp, "../images/$post_image");
+  // move_uploaded_file($post_image_temp, "../images/$post_image");
 
-  $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status) ";
-
-  $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' ) ";
-
-  $create_post_query = mysqli_query($connection, $query);
-
-  confirmQuery($create_post_query);
+  // $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status) ";
+  //
+  // $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' ) ";
+  //
+  // $create_post_query = mysqli_query($connection, $query);
+  //
+  // confirmQuery($create_post_query);
 
 }
 
