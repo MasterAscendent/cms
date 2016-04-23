@@ -3,8 +3,24 @@
 <?php
 if(isset($_SESSION['username'])) {
 
+  $username = $_SESSION['username'];
 
+  $query = "SELECT * FROM users WHERE username = '{$username}' "
 
+  $select_user_profile_query = mysqli_query($connection, $query);
+
+  while($row = mysqli_fetch_array($select_user_profile_query)) {
+
+    $user_id = $row['user_id'];
+    $username = $row['username'];
+    $user_password = $row['user_password'];
+    $user_firstname = $row['user_firstname'];
+    $user_lastname = $row['user_lastname'];
+    $user_email = $row['user_email'];
+    $user_image = $row['user_image'];
+    $user_role = $row['user_role'];
+
+  }
 }
 
  ?>
@@ -39,7 +55,7 @@ if(isset($_SESSION['username'])) {
                           <label for="post_status">Lastname</label>
                           <input type="text" value="<?php echo $user_lastname; ?>" class="form-control" name="user_lastname">
                         </div>
-                      
+
                         <div class="form-group">
                           <select name="user_role" id="">
 
@@ -85,7 +101,7 @@ if(isset($_SESSION['username'])) {
                         </div>
 
                         <div class="form-group">
-                          <input class="btn btn-primary" type="submit" name="edit_user" value="Edit User">
+                          <input class="btn btn-primary" type="submit" name="edit_user" value="Update Profile">
                         </div>
 
                       </form>
