@@ -1,5 +1,6 @@
 <?php include "includes/db.php"; ?>
 <?php include "includes/header.php"; ?>
+<?php session_start(); ?>
     <!-- Navigation -->
     <?php include "includes/navigation.php" ?>
 
@@ -51,7 +52,7 @@
                   <img class="img-responsive" src="images/<?php echo $post_image; ?>" alt="">
                   <hr>
                   <p><?php echo $post_content ?></p>
-                  
+
                   <hr>
 
                 <?php } ?>
