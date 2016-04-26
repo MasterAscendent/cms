@@ -6,13 +6,14 @@
       $bulk_options = $_POST['bulk_options'];
 
       switch ($bulk_options) {
-        case 'publish':
+        case 'published':
 
           $query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id= {$postValueId} ";
 
           $update_to_published_status = mysqli_query($connection, $query);
 
           confirmQuery($update_to_published_status);
+
           break;
       }
 
