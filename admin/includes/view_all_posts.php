@@ -1,9 +1,20 @@
 <?php
   if(isset($_POST['checkBoxArray'])) {
 
-    foreach($_POST['checkBoxArray'] as $checkBoxValue ) {
+    foreach($_POST['checkBoxArray'] as $postValueId ) {
 
       $bulk_options = $_POST['bulk_options'];
+
+      switch ($bulk_options) {
+        case 'publish':
+
+          $query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id= {$postValueId} ";
+
+          $update_to_published_status = mysqli_query($connection, $query);
+
+          confirmQuery($update_to_published_status);
+          break;
+      }
 
     }
 
@@ -21,10 +32,11 @@
 
     <select class="form-control" name="bulk_options" id="">
       <option value="">Select Option</option>
-      <option value="">Publish</option>
-      <option value="">Draft</option>
-      <option value="">Delete</option>
+      <option value="published">Publish</option>
+      <option value="draft">Draft</option>
+      <option value="delete">Delete</option>
     </select>
+  </div>
 
 <div class="col-xs-4">
 
@@ -33,7 +45,7 @@
 
 </div>
 
-</div>
+
 
   <thead>
     <tr>
@@ -74,7 +86,7 @@
       echo "<tr>";
       ?>
 
-      <td><input class='checkboxes' type='checkbox' name='checkboxArray[]' value='<?php echo $post_id; ?>'></td>;
+      <td><input class='checkboxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $post_id; ?>'></td>
 
       <?php
 
