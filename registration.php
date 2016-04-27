@@ -13,7 +13,6 @@ if(isset($_POST['submit'])) {
   $email = mysqli_real_escape_string($connection, $email);
   $password =  mysqli_real_escape_string($connection, $password);
 
-
   $query = "SELECT randSalt FROM users";
   $select_randsalt_query = mysqli_query($connection, $query);
 
@@ -23,6 +22,11 @@ if(isset($_POST['submit'])) {
 
   }
 
+  while($row = mysqli_fetch_array($select_randsalt_query)) {
+
+    echo $salt = $row['randSalt'];
+
+  }
 
 }
 
