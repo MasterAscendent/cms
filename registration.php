@@ -28,8 +28,6 @@ if(isset($_POST['submit'])) {
 
      $salt = $row['randSalt'];
 
-     $password = cript($password, $salt);
-
      $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
      $query .= "VALUES('{$username}', '{$email}', '{$password}', 'subscriber' )";
      $register_user_query = mysqli_query($connection, $query);
