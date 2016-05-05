@@ -4,14 +4,6 @@
 
       <?php if($connection) echo "conn";  ?>
 
-
-
-
-
-
-
-
-
         <!-- Navigation -->
         <?php include "includes/admin_navigation.php"; ?>
 
